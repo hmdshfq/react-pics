@@ -1,11 +1,5 @@
 import React from 'react'
 class SearchBar extends React.Component {
-
-    // event object is passed into the function from onChange
-    onInputChange(event) {
-        event.target.value
-    }
-
     render() {
         return (
             <div className='ui segment'>
@@ -16,7 +10,7 @@ class SearchBar extends React.Component {
                         <input
                             id='search'
                             type='text'
-                            onChange={this.onInputChange}
+                            onChange={(event)=>console.log(event.target.value)}
                         />
                     </div>
                 </form>
