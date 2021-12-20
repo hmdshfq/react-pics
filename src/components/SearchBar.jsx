@@ -1,5 +1,7 @@
 import React from 'react'
 class SearchBar extends React.Component {
+    state = { term: '' }
+
     render() {
         return (
             <div className='ui segment'>
@@ -10,7 +12,8 @@ class SearchBar extends React.Component {
                         <input
                             id='search'
                             type='text'
-                            onChange={e => console.log(e.target.value)}
+                            onChange={e => this.setState({ term: e.target.value })}
+                            value={this.state.term}
                         />
                     </div>
                 </form>
