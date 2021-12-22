@@ -1,13 +1,21 @@
 import React from 'react'
 
-class ImageList extends React.Component {
+class ImageCard extends React.Component {
+    constructor(props) {
+        super(props)
+        this.imageRef = React.createRef()
+    }
+    componentDidMount() {
+        console.log(this.imageRef)
+    }
     render() {
         const { description, urls } = this.props.image;
         return (
             <div>
                 <img
+                    ref={this.imageRef}
                     src={urls.regular}
-                    alt={alt_description}
+                    alt={description}
                 />
             </div>
         )
